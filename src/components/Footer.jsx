@@ -69,7 +69,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://facebook.com/IyaIlorinGold"
+                href="https://facebook.com/Yuswasinvestment"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-[#1877F2] bg-opacity-20 hover:bg-[#1877F2] hover:scale-110 rounded-full flex items-center justify-center transition-all duration-300"
@@ -79,7 +79,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://tiktok.com/@IyaIlorinGold"
+                href="https://tiktok.com/@Yuswasinvestment"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-black bg-opacity-20 hover:bg-red-500 hover:scale-110 rounded-full flex items-center justify-center transition-all duration-300"
@@ -187,17 +187,28 @@ const Footer = () => {
               Get In Touch
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3 text-gray-400 text-sm">
-                <MapPin size={18} className="text-[#D4AF37] shrink-0 mt-0.5" />
-                <span>{CONTACT_INFO.address}</span>
-              </li>
+              <ul className="space-y-3">
+                {CONTACT_INFO.locations.map((loc, i) => (
+                  <li key={i} className="flex items-start space-x-3 text-gray-400 text-sm">
+                    <MapPin size={18} className="text-[#D4AF37] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white">{loc.name}:</span>{" "}
+                      <span>{loc.address}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
               <li className="flex items-center space-x-3 text-gray-400 text-sm">
                 <Phone size={18} className="text-[#D4AF37] shrink-0" />
-                <span>{CONTACT_INFO.phone}</span>
+                <span><a href={`tel:${CONTACT_INFO.phone}`}>{CONTACT_INFO.phone}</a></span>
+              </li>
+              <li className="flex items-center space-x-3 text-gray-400 text-sm">
+                <SiWhatsapp size={18} className="text-[#D4AF37] shrink-0" />
+                <span><a href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`}>{CONTACT_INFO.whatsapp}</a></span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm">
                 <Mail size={18} className="text-[#D4AF37] shrink-0" />
-                <span>{CONTACT_INFO.email}</span>
+                <span><a href={`mailto:${CONTACT_INFO.email}`}>{CONTACT_INFO.email}</a></span>
               </li>
             </ul>
           </div>

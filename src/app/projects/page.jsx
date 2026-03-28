@@ -79,6 +79,72 @@ const ProjectsPage = () => {
                 {...fadeIn}
                 transition={{ delay: i * 0.1 }}
                 className="group relative bg-[#0a0a0a] border border-white/5 overflow-hidden cursor-pointer"
+              >
+                {/* Project Image with overlay */}
+                <div
+                  className="relative h-[400px] overflow-hidden"
+                  onClick={() => openLightbox(project)}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-70"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300">
+                      <Maximize2 size={24} className="text-black" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Info */}
+                <div className="p-8">
+                  <div className="flex items-center space-x-2 text-[#D4AF37] text-[10px] tracking-widest uppercase font-bold mb-3">
+                    <MapPin size={12} />
+                    <span>{project.location}</span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-2 tracking-tighter group-hover:text-[#D4AF37] transition-colors">
+                    {project.title}
+                  </h3>
+
+                  {/* Client and Value */}
+                  <div className="text-gray-400 text-xs mb-2 space-y-1">
+                    <p>
+                      <span className="font-semibold">Client:</span> {project.client}
+                    </p>
+                    <p>
+                      <span className="font-semibold">Project Value:</span> {project.value}
+                    </p>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-500 text-sm font-light line-clamp-2 leading-relaxed mb-4">
+                    {project.description}
+                  </p>
+
+                  {/* View Gallery CTA */}
+                  <button
+                    onClick={() => openLightbox(project)}
+                    className="inline-block bg-[#D4AF37] text-black font-black px-6 py-2 text-xs tracking-widest uppercase hover:bg-[#B8962E] transition-all"
+                  >
+                    View Gallery
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* <section className="py-24 bg-black">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PROJECTS.map((project, i) => (
+              <motion.div
+                key={project.id}
+                {...fadeIn}
+                transition={{ delay: i * 0.1 }}
+                className="group relative bg-[#0a0a0a] border border-white/5 overflow-hidden cursor-pointer"
                 onClick={() => openLightbox(project)}
               >
                 <div className="relative h-[400px] overflow-hidden">
@@ -109,7 +175,7 @@ const ProjectsPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Lightbox Modal */}
       <AnimatePresence>

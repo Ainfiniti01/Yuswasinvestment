@@ -7,11 +7,14 @@ import {
   MessageSquare,
   Send,
   ArrowRight,
+  Facebook,
+
 } from "lucide-react";
 import Layout from "../../components/Layout";
 import BorderGlow from "../../components/BorderGlow";
 import GlassSurface from "../../components/GlassSurface";
 import { CONTACT_INFO } from "../../data/siteContent";
+import { SiWhatsapp, SiTiktok } from "react-icons/si";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -19,6 +22,14 @@ const fadeIn = {
   viewport: { once: true },
   transition: { duration: 0.6 },
 };
+
+  const whatsappPrefill = encodeURIComponent(
+    "Hello Yuswas Investments Ltd, I would like to make an inquiry about your services.",
+  );
+  const emailSubject = encodeURIComponent("Inquiry from Website");
+  const emailBody = encodeURIComponent(
+    "Hello Yuswas Investments Ltd,\n\nI would like to make an inquiry about your services.\n\nThank you.",
+  );
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -264,13 +275,17 @@ Please contact me at your earliest convenience. Thank you.`;
                   <div className="w-12 h-12 bg-[#0a0a0a] border border-white/10 flex items-center justify-center shrink-0">
                     <MapPin className="text-[#D4AF37]" size={24} />
                   </div>
-                  <div>
-                    <h4 className="text-[#D4AF37] text-[10px] tracking-widest uppercase font-black mb-2">
-                      Our Office
-                    </h4>
-                    <p className="text-xl text-white font-light leading-relaxed">
-                      {CONTACT_INFO.address}
-                    </p>
+                  <div className="space-y-6">
+                    {CONTACT_INFO.locations.map((loc, i) => (
+                      <div key={i}>
+                        <h4 className="text-[#D4AF37] text-[10px] tracking-widest uppercase font-black mb-2">
+                          {loc.name}
+                        </h4>
+                        <p className="text-xl text-white font-light leading-relaxed">
+                          {loc.address}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -283,10 +298,31 @@ Please contact me at your earliest convenience. Thank you.`;
                       Call Us
                     </h4>
                     <p className="text-xl text-white font-light leading-relaxed">
-                      {CONTACT_INFO.phone}
+                      <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-[#D4AF37] transition-colors">
+                        {CONTACT_INFO.phone}
+                      </a>
                     </p>
                     <p className="text-gray-500 text-sm font-light">
                       Mon - Fri, 9am - 6pm
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-6">
+                  <div className="w-12 h-12 bg-[#0a0a0a] border border-white/10 flex items-center justify-center shrink-0">
+                    <SiWhatsapp className="text-[#D4AF37]" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-[#D4AF37] text-[10px] tracking-widest uppercase font-black mb-2">
+                      Whatsapp
+                    </h4>
+                    <p className="text-xl text-white font-light leading-relaxed">
+                      <a href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`} className="hover:text-[#D4AF37] transition-colors">
+                        {CONTACT_INFO.whatsapp}
+                      </a>
+                    </p>
+                    <p className="text-gray-500 text-sm font-light">
+                      Anytime
                     </p>
                   </div>
                 </div>
@@ -300,7 +336,9 @@ Please contact me at your earliest convenience. Thank you.`;
                       Email Us
                     </h4>
                     <p className="text-xl text-white font-light leading-relaxed">
-                      {CONTACT_INFO.email}
+                      <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-[#D4AF37] transition-colors">  
+                        {CONTACT_INFO.email}
+                      </a>
                     </p>
                     <p className="text-gray-500 text-sm font-light">
                       Direct inquiries & support
@@ -308,24 +346,53 @@ Please contact me at your earliest convenience. Thank you.`;
                   </div>
                 </div>
 
-                <div className="pt-8 border-t border-white/5">
-                  <h4 className="text-[#D4AF37] text-[10px] tracking-widest uppercase font-black mb-6">
-                    Connect With Us
-                  </h4>
-                  <div className="flex space-x-4">
-                    {["FACEBOOK", "TWITTER", "INSTAGRAM", "LINKEDIN"].map(
-                      (social) => (
-                        <a
-                          key={social}
-                          href="#"
-                          className="text-white hover:text-[#D4AF37] text-[10px] tracking-widest font-black transition-colors"
-                        >
-                          {social}
-                        </a>
-                      ),
-                    )}
-                  </div>
-                </div>
+                <div className="flex gap-4 justify-center md:justify-start">
+                              <a
+                                href={`mailto:${CONTACT_INFO.email}?subject=${emailSubject}&body=${emailBody}`}
+                                className="w-10 h-10 bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 bg-opacity-10 hover:scale-110 hover:bg-opacity-25 rounded-full flex items-center justify-center transition-all duration-300"
+                                aria-label="Email"
+                              >
+                                <Mail className="w-5 h-5 text-white" />
+                              </a>
+                
+                              <a
+                                href="https://facebook.com/IyaIlorinGold"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 bg-[#1877F2] bg-opacity-20 hover:bg-[#1877F2] hover:scale-110 rounded-full flex items-center justify-center transition-all duration-300"
+                                aria-label="Facebook"
+                              >
+                                <Facebook className="w-5 h-5 text-[#1877F2]" />
+                              </a>
+                
+                              <a
+                                href="https://tiktok.com/@IyaIlorinGold"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 bg-black bg-opacity-20 hover:bg-red-500 hover:scale-110 rounded-full flex items-center justify-center transition-all duration-300"
+                                aria-label="TikTok"
+                              >
+                                <SiTiktok className="w-5 h-5 text-white" />
+                              </a>
+                              <a
+                              href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappPrefill}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-[#25D366] bg-opacity-20 hover:bg-[#25D366] hover:scale-110 rounded-full flex items-center justify-center transition-all duration-300"
+                              aria-label="WhatsApp"
+                            >
+                              <SiWhatsapp className="w-5 h-5 text-white" />
+                            </a>
+                            <a
+                              href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, "")}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-10 h-10 bg-[#dee0df] bg-opacity-20 hover:bg-[#c3dacb] hover:scale-110 rounded-full flex items-center justify-center transition-all duration-300"
+                              aria-label="Phone"
+                            >
+                              <Phone className="w-5 h-5 text-white" />
+                            </a>
+                            </div>
               </div>
             </motion.div>
           </div>

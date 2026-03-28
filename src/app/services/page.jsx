@@ -91,7 +91,7 @@ const ServicesPage = () => {
                     href="/contact"
                     className="flex items-center space-x-2 text-white font-bold text-[10px] tracking-widest uppercase border-b border-white/20 pb-1 w-fit group-hover:border-[#D4AF37] transition-colors"
                   >
-                    <span>Inquire Now</span>
+                    <span>{service.ctaLabel || "Inquire Now"}</span>
                     <ArrowRight
                       size={14}
                       className="group-hover:translate-x-1 transition-transform"

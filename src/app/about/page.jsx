@@ -40,10 +40,12 @@ const AboutPage = () => {
               About <span className="font-playball">Yuswas</span>
             </h2>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-              A Legacy of <span className="text-[#D4AF37]">Trust</span> & Quality
+              Legacy of <span className="text-[#D4AF37]">Excellence</span> & Innovation
             </h1>
             <p className="text-xl text-gray-400 font-light leading-relaxed">
-              Built on integrity, honesty, and decades of hands-on experience, Yuswas Investment Ltd has delivered hundreds of homes, banks, offices, and government projects across Nigeria, always putting clients first and ensuring lasting quality.
+              Yuswas Investments Ltd has been delivering top-tier construction and real estate services since 2008,
+              following 7 years of pre-incorporation operations. Our expertise spans multiple sectors through our business units:
+              <strong>Yuswas Properties & Constructions, Yuswas Project Management, Yuswas Block & Concreting Industry, and Yuswas Logistics.</strong>
             </p>
           </motion.div>
         </div>
@@ -69,26 +71,53 @@ const AboutPage = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              {...fadeIn}
-              transition={{ delay: 0.2 }}
-              className="space-y-8"
-            >
-              <h3 className="text-3xl md:text-4xl font-bold tracking-tighter">
-                Our Journey & Approach
-              </h3>
-              <div className="space-y-6 text-gray-400 font-light leading-relaxed text-lg">
-                <p>
-                  Yuswas Investment Ltd was founded on integrity, honesty, and a passion for creating lasting structures. What began as a vision by Alhaji Yusuf Wasiu Olaniyi has grown into a trusted construction company delivering banks, residential homes, offices, and government projects across Nigeria.
-                </p>
-                <p>
-                  Every project is approached with care, planning, and attention to detail. From selecting materials to optimizing space, we ensure our clients’ visions are realized efficiently and with superior quality.
-                </p>
-                <p>
-                  Beyond buildings, we build relationships. Our commitment to professionalism, safety, and community impact ensures that each project benefits both the client and the neighborhood, leaving a legacy of trust and excellence.
-                </p>
-              </div>
-            </motion.div>
+            <div className="space-y-12">
+              {[
+                {
+                  title: "Company Overview",
+                  content: `Yuswas Investment Ltd was founded on integrity, honesty, and a passion for creating lasting structures. What began as a vision by Alhaji Yusuf Wasiu Olaniyi has grown into a trusted construction company delivering residential homes, commercial offices, banks, and government projects across Nigeria.`
+                },
+                {
+                  title: "Our Philosophy",
+                  content: `Our real business is gaining customers’ loyalty and satisfaction. By consistently delivering projects on time, within schedule, and at competitive costs, we build long-term trust and a strong client base. Every project is approached with care, planning, and attention to detail, ensuring our clients’ visions are realized efficiently and with superior quality.`
+                },
+                {
+                  title: "Company History",
+                  content: `Yuswas Investments Limited is a limited liability company incorporated under Nigerian law. Before our formal incorporation in 2008, we operated as Yuswas Investment for 7 years. The company consists of the following business units:`,
+                  list: [
+                    "Yuswas Properties and Constructions",
+                    "Yuswas Project Management",
+                    "Yuswas Block and Concreting Industry",
+                    "Yuswas Logistics"
+                  ]
+                },
+                {
+                  title: "Community & Legacy",
+                  content: `Beyond buildings, we build relationships. Our commitment to professionalism, safety, and community impact ensures that each project benefits both the client and the neighborhood, leaving a legacy of trust and excellence.`
+                }
+              ].map((section, i) => (
+                <motion.div
+                  key={section.title}
+                  {...fadeIn}
+                  transition={{ delay: i * 0.2 }}
+                  className="space-y-4"
+                >
+                  <h4 className="text-2xl font-semibold mb-2 tracking-tight text-[#D4AF37]">
+                    {section.title}
+                  </h4>
+                  <p className="text-gray-400 font-light leading-relaxed text-lg">
+                    {section.content}
+                  </p>
+                  {section.list && (
+                    <ul className="list-disc ml-6 mt-2 space-y-1 text-gray-400 font-light">
+                      {section.list.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -106,7 +135,7 @@ const AboutPage = () => {
                 Our Mission
               </h4>
               <p className="text-gray-400 font-light leading-relaxed text-lg">
-                To deliver construction projects with honesty, reliability, and unmatched quality, while ensuring our clients’ visions are fully realized and communities are positively impacted.
+                To provide unparalleled construction services and investment opportunities with excellence, ethical business practices, and innovation.
               </p>
             </motion.div>
             <motion.div
@@ -119,10 +148,24 @@ const AboutPage = () => {
                 Our Vision
               </h4>
               <p className="text-gray-400 font-light leading-relaxed text-lg">
-                To be recognized across Nigeria as the most trusted construction expert, building homes, offices, banks, and government structures with integrity, excellence, and lasting impact.
+                To be the most trusted and innovative construction and investment firm in Nigeria and Africa, creating sustainable wealth and communities.
               </p>
             </motion.div>
+            
           </div>
+          {/* <motion.div
+                        {...fadeIn}
+                        transition={{ delay: 0.2 }}
+                        className="p-12 border border-white/5 bg-black"
+                      >
+                        <Eye className="text-[#D4AF37] mb-6" size={48} />
+                        <h4 className="text-2xl font-bold mb-6 tracking-tighter">
+                          Our Vision
+                        </h4>
+                        <p className="text-gray-400 font-light leading-relaxed text-lg">
+                          To be the most trusted and innovative construction and investment firm in Nigeria and Africa, creating sustainable wealth and communities.
+                        </p>
+                      </motion.div> */}
         </div>
       </section>
 
@@ -199,7 +242,7 @@ const AboutPage = () => {
                 <p className="text-[#D4AF37] text-xs font-black tracking-widest uppercase mb-4">
                   {member.role}
                 </p>
-                <p className="text-gray-500 text-sm font-light leading-relaxed">
+                <p className="text-gray-500 text-sm font-light leading-relaxed whitespace-pre-line">
                   {member.bio}
                 </p>
               </motion.div>
@@ -207,6 +250,138 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      <section className="py-20 bg-black">
+      <div className="container mx-auto px-6">
+        
+        {/* Section Heading */}
+        <div className="max-w-3xl mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            Our Technical & Management Team
+          </h3>
+          <p className="text-gray-500 text-sm font-light leading-relaxed">
+            Supported by a team of highly qualified engineers, consultants, and technical experts with decades of combined experience.
+          </p>
+        </div>
+
+        {/* Team List */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div className="border border-white/10 p-6">
+            <h4 className="font-bold text-lg">Abdulsalam Hakeem</h4>
+            <p className="text-[#D4AF37] text-xs uppercase">Project Manager</p>
+            <p className="text-gray-500 text-sm mt-2">BSc Civil Engineering, COREN, MNSE</p>
+            <p className="text-gray-400 text-xs mt-1">12 years experience</p>
+          </div>
+
+          <div className="border border-white/10 p-6">
+            <h4 className="font-bold text-lg">Popoola Tajudeen</h4>
+            <p className="text-[#D4AF37] text-xs uppercase">Mechanical Engineer Consultant</p>
+            <p className="text-gray-500 text-sm mt-2">PhD, COREN, NIMechE</p>
+            <p className="text-gray-400 text-xs mt-1">25 years experience</p>
+          </div>
+
+          <div className="border border-white/10 p-6">
+            <h4 className="font-bold text-lg">Mukthar Waheed</h4>
+            <p className="text-[#D4AF37] text-xs uppercase">Project Manager</p>
+            <p className="text-gray-500 text-sm mt-2">BSc Civil Engineering, COREN</p>
+            <p className="text-gray-400 text-xs mt-1">10 years experience</p>
+          </div>
+
+          <div className="border border-white/10 p-6">
+            <h4 className="font-bold text-lg">Lawal Nafiu Taiye</h4>
+            <p className="text-[#D4AF37] text-xs uppercase">HSE Officer / Asst. Project Manager</p>
+            <p className="text-gray-500 text-sm mt-2">HND Civil Engineering</p>
+            <p className="text-gray-400 text-xs mt-1">8 years experience</p>
+          </div>
+
+          <div className="border border-white/10 p-6">
+            <h4 className="font-bold text-lg">Showumi Babatunde Tobi</h4>
+            <p className="text-[#D4AF37] text-xs uppercase">Head M&E</p>
+            <p className="text-gray-500 text-sm mt-2">HND Electrical Engineering</p>
+            <p className="text-gray-400 text-xs mt-1">10 years experience</p>
+          </div>
+
+          <div className="border border-white/10 p-6">
+            <h4 className="font-bold text-lg">Okesola Hakeem</h4>
+            <p className="text-[#D4AF37] text-xs uppercase">Value Engineer</p>
+            <p className="text-gray-500 text-sm mt-2">BSc Quantity Surveying, ANIQS</p>
+            <p className="text-gray-400 text-xs mt-1">15 years experience</p>
+          </div>
+
+          <div className="border border-white/10 p-6">
+            <h4 className="font-bold text-lg">Itanola Muibi Ademola</h4>
+            <p className="text-[#D4AF37] text-xs uppercase">Company Auditor</p>
+            <p className="text-gray-500 text-sm mt-2">FCA</p>
+            <p className="text-gray-400 text-xs mt-1">25 years experience</p>
+          </div>
+
+          <div className="border border-white/10 p-6">
+            <h4 className="font-bold text-lg">Saka Ibrahim Tunde</h4>
+            <p className="text-[#D4AF37] text-xs uppercase">Electrical Engineer</p>
+            <p className="text-gray-500 text-sm mt-2">HND Electrical Engineering</p>
+            <p className="text-gray-400 text-xs mt-1">10 years experience</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section className="py-24 bg-black">
+  <div className="container mx-auto px-6">
+
+    {/* Heading */}
+    <div className="max-w-3xl mb-16">
+      <h2 className="text-[#D4AF37] font-bold text-xs tracking-[0.3em] uppercase mb-4">
+        Resources & Capacity
+      </h2>
+      <h3 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">
+        Strength Beyond Construction
+      </h3>
+      <p className="text-gray-500 text-sm font-light leading-relaxed">
+        Our strength lies not only in our people, but in our capacity — combining skilled professionals,
+        modern equipment, and efficient logistics to deliver quality projects consistently.
+      </p>
+    </div>
+
+    {/* Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      {/* Human Capacity */}
+      <div className="border border-white/10 p-8">
+        <h4 className="text-xl font-bold mb-4">👷 Human Capacity</h4>
+        <ul className="text-gray-400 text-sm space-y-2">
+          <li>• Experienced Engineers & Consultants</li>
+          <li>• Project Managers & Supervisors</li>
+          <li>• Skilled Technical Workforce</li>
+          <li>• Safety & Quality Control Personnel</li>
+        </ul>
+      </div>
+
+      {/* Equipment */}
+      <div className="border border-white/10 p-8">
+        <h4 className="text-xl font-bold mb-4">🚜 Equipment</h4>
+        <ul className="text-gray-400 text-sm space-y-2">
+          <li>• Operational Vehicles & Trucks</li>
+          <li>• Block Making Machines</li>
+          <li>• Concrete Mixers & Vibrators</li>
+          <li>• Welding Machines & Jack Hammers</li>
+          <li>• Compactors & Concrete Cutters</li>
+        </ul>
+      </div>
+
+      {/* Materials & Logistics */}
+      <div className="border border-white/10 p-8">
+        <h4 className="text-xl font-bold mb-4">📦 Materials & Logistics</h4>
+        <ul className="text-gray-400 text-sm space-y-2">
+          <li>• Access to Quality Building Materials</li>
+          <li>• Efficient Supply Chain Management</li>
+          <li>• On-Time Delivery to Project Sites</li>
+          <li>• Reliable Logistics & Transportation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
     </Layout>
   );
 };
