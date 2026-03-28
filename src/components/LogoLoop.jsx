@@ -78,6 +78,7 @@ const useAnimationLoop = (
   isHovered,
   hoverSpeed,
   isVertical,
+  respectReducedMotion,
 ) => {
   const rafRef = useRef(null);
   const lastTimestampRef = useRef(null);
@@ -103,7 +104,7 @@ const useAnimationLoop = (
       track.style.transform = transformValue;
     }
 
-    if (prefersReduced) {
+    if (respectReducedMotion && prefersReduced) {
       track.style.transform = "translate3d(0, 0, 0)";
       return () => {
         lastTimestampRef.current = null;
@@ -153,6 +154,7 @@ const useAnimationLoop = (
     isHovered,
     hoverSpeed,
     isVertical,
+    respectReducedMotion,
     trackRef,
   ]);
 };
@@ -169,6 +171,7 @@ export const LogoLoop = memo(
     hoverSpeed,
     fadeOut = false,
     fadeOutColor,
+    respectReducedMotion = true,
     scaleOnHover = false,
     renderItem,
     ariaLabel = "Partner logos",
@@ -249,6 +252,7 @@ export const LogoLoop = memo(
       isHovered,
       effectiveHoverSpeed,
       isVertical,
+      respectReducedMotion,
     );
 
     const cssVariables = useMemo(

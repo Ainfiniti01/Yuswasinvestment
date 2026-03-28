@@ -331,6 +331,7 @@ const Page = () => {
             logoHeight={50}
             gap={26}
             hoverSpeed={20}
+            respectReducedMotion={false}
             scaleOnHover
             fadeOut
             fadeOutColor="#bb9b32"
