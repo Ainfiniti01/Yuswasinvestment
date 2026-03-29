@@ -18,30 +18,30 @@ import { PROJECTS, TESTIMONIALS, SERVICES } from "../data/siteContent";
 
 const partnerLogos = [
   {
-    src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
-    alt: "Partner logo 1",
-    title: "Partner logo 1",
+    src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3auto=format&fit=crop",
+    alt: "Afriland Properties logo",
+    title: "Afriland Properties",
   },
   {
-    src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
-    alt: "Partner logo 2",
-    title: "Partner logo 2",
+    src: "https://th.bing.com/th/id/OIP.5FK1ltA4z12MLn4qu1MtgAHaEc?w=290&h=180&c=7&r=0&o=7&pid=1.7&rm=3auto=format&fit=crop",
+    alt: "United Bank for Africa logo",
+    title: "United Bank for Africa",
   },
   {
-    src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
-    alt: "Partner logo 3",
-    title: "Partner logo 3",
+    src: "https://th.bing.com/th/id/OIP.aURs62-ciA2MVVGAyxNBJAHaEP?w=300&h=180&c=7&r=0&o=7&pid=1.7&rm=3auto=format&fit=crop",
+    alt: "Africa Prudential logo",
+    title: "Africa Prudential",
   },
-  {
-    src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
-    alt: "Partner logo 4",
-    title: "Partner logo 4",
-  },
-  {
-    src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
-    alt: "Partner logo 5",
-    title: "Partner logo 5",
-  },
+  // {
+  //   src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
+  //   alt: "Partner logo 4",
+  //   title: "Partner logo 4",
+  // },
+  // {
+  //   src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
+  //   alt: "Partner logo 5",
+  //   title: "Partner logo 5",
+  // },
 ];
 
 const fadeIn = {
@@ -326,11 +326,11 @@ const Page = () => {
 
           <LogoLoop
             logos={partnerLogos}
-            speed={50}
+            speed={30}
             direction="right"
-            logoHeight={50}
-            gap={26}
-            hoverSpeed={20}
+            logoHeight={70}
+            gap={25}
+            hoverSpeed={30}
             respectReducedMotion={false}
             scaleOnHover
             fadeOut
