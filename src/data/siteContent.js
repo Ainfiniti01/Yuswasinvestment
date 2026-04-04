@@ -129,6 +129,7 @@ export const PROJECTS = [
       "/images/UBA1.jpeg",
       "/images/UBA2.jpeg",
       "/images/UBA3.jpeg",
+      "/images/UBA.jpeg",
     ],
   },
   {
@@ -141,28 +142,32 @@ export const PROJECTS = [
       "Upgrade of head office for Africa Prudential PLC, featuring state-of-the-art facilities and sustainable design elements, completed with meticulous attention to detail and quality craftsmanship.",
     category: "Commercial",
     image:
-      "/images/African Prudential.jpeg", // TODO: Source replacement
+      "/images/African Prudential 4.jpeg",
     gallery: [
       "/images/African Prudential 1.jpeg",
       "/images/African Prudential 2.jpeg",
       "/images/African Prudential 3.jpeg",
+      "/images/African Prudential.jpeg",
+      "/images/African Prudential 5.jpeg",
+      "/images/African Prudential Building.jpeg",
       "/images/African Prudential M.jpeg",
     ],
   },
   {
     id: 3,
-    title: "The Palms Office Park",
-    location: "Lekki, Nigeria",
-    client: "Africa prudential PLC",
-    value: "197.5m Naira",
+    title: "United Bank for Africa (UBA) Business office",
+    location: "Ojoo Ibadan, Oyo state, Nigeria",
+    client: "United Bank for Africa (UBA) Plc",
+    value: "N409m",
     description:
-      "Eco-friendly corporate park designed for tech innovators and established enterprises.",
+      "Construction of a 2-floor business office for UBA, including civil works, electrical and mechanical installations, and finishing works, completed to the highest standards of quality and durability.",
     category: "Commercial",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop", // TODO: Source replacement
+    image: "/images/UBA4.jpeg", // Local image
     gallery: [
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=1200&auto=format&fit=crop",
+      "/images/UBA5.jpeg",
+      "/images/UBA6.jpeg",
+      "/images/UBA7.jpeg",
+      "/images/UBA4.jpeg",
     ],
   },
   {
@@ -286,6 +291,12 @@ export const CORE_VALUES = [
       "Our work is guided by godly principles, fairness, and moral discipline, reflecting faith-based values in how we serve people.",
     icon: "Scale",
   },
+  {
+    title: "Safety & Compliance",
+    description:
+      "We prioritize safety and adhere to all regulatory standards, ensuring that every project is not only successful but also safe for everyone involved.",
+    icon: "ShieldCheck",
+  },
 ];
 
 export const TEAM_MEMBERS = [
@@ -293,21 +304,18 @@ export const TEAM_MEMBERS = [
     name: "Alhaji Yusuf Wasiu Olaniyi",
     role: "Founder & CEO",
     bio: "MBA, MBCL\n22 years experience",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
+    image: "/images/Yuswas logo.png", 
   },
    {
     name: "Ayeleso Tunde Wasiu",
     role: "Chief Operating Officer",
     bio: "Bsc Civil Eng, HND Architectural Tech, COREN, MNSE,  MNISE\n18 years experience",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
+    image: "/images/Yuswas logo.png", 
   },
    {
     name: "Abdulsalam Hakeem",
     role: "Project Manager",
     bio: "Bsc Civil Eng, HND, COREN, MNSE,  MNISE\n12 years experience",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop",
+    image: "/images/Yuswas logo.png", 
   },
 ];

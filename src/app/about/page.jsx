@@ -57,7 +57,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div {...fadeIn} className="relative">
               <img
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QXJjaGl0ZWN0dXJlfGVufDB8fDB8fHwwauto=format&fit=crop"
+                src="/images/Yuswas logo.png"
                 alt="Construction Project"
                 className="w-full h-[600px] object-cover border border-white/10"
               />

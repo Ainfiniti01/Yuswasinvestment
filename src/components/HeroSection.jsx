@@ -40,6 +40,19 @@ export default function HeroSection() {
     },
     {
       id: 3,
+      backgroundImage: "/images/Safety3.jpg", 
+      backgroundAlt: "Construction safety measures in action",
+      category: "Safety & Compliance",
+      headline: "Commitment to Safety and Compliance",
+      subtext:
+        "We adhere to the highest safety standards and regulatory compliance, ensuring a secure environment for our workers and clients on every project.",
+      ctaText: "Learn More",
+      ctaLink: "/about",
+      textPosition: "right",
+      accentColor: "gold",
+    },
+    {
+      id: 4,
       backgroundImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
       backgroundAlt: "Construction consultation and planning",
       category: "Construction Consultation",

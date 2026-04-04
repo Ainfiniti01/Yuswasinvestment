@@ -32,16 +32,11 @@ const partnerLogos = [
     alt: "Africa Prudential logo",
     title: "Africa Prudential",
   },
-  // {
-  //   src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
-  //   alt: "Partner logo 4",
-  //   title: "Partner logo 4",
-  // },
-  // {
-  //   src: "https://tse2.mm.bing.net/th/id/OIP.j34NJcJOmJ4IwM9RuRqiaQAAAA?pid=ImgDet&w=197&h=98&c=7&o=7&rm=3",
-  //   alt: "Partner logo 5",
-  //   title: "Partner logo 5",
-  // },
+  {
+    src: "https://tse1.mm.bing.net/th/id/OIP.su-LzMyLULFWjEzFfiNwoQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3auto=format&fit=crop",
+    alt: "Uba pension custodian limited logo",
+    title: "Uba pension custodian limited",
+  },
 ];
 
 const fadeIn = {
