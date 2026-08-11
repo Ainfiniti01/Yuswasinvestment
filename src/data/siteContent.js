@@ -9,7 +9,7 @@ export const NAV_LINKS = [
 export const CONTACT_INFO = {
   phone: "+234 803 964 1194",
   email: "yuswasinvestmentsltd@gmail.com",
-  whatsapp: "+234 815 922 9220",
+  whatsapp: "+2348159229220",
   locations: [
     {
       name: "Lagos Office",
@@ -172,18 +172,23 @@ export const PROJECTS = [
   },
   {
     id: 4,
-    title: "Azure Waterfront Estate",
-    location: "Victoria Island, Lagos",
-    client: "Africa prudential PLC",
-    value: "197.5m Naira",
+    title: "United Bank for Africa (UBA) Business office",
+    location: "Abuja, Nigeria",
+    client: "United Bank for Africa (UBA) Plc",
+    value: "N409m",
     description:
-      "Exclusive waterfront villas offering private docks and panoramic ocean views.",
-    category: "Residential",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop", // TODO: Source replacement
+      "Construction of a 2-floor business office for UBA, including civil works, electrical and mechanical installations, and finishing works, completed to the highest standards of quality and durability.",
+    category: "Commercial",
+    image: "/images/Abj-inspo.jpeg", // Local image
     gallery: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600607687940-c52af04657b3?q=80&w=1200&auto=format&fit=crop",
+      "/images/Abj-floor.jpeg",
+      "/images/Abj-pillar.jpeg",
+      "/images/Abj-est.jpeg",
+      "/images/Abj-2.jpeg",
+      "/images/Abj-1.jpeg",
+      "/images/Abj-3.jpeg",
+      "/images/Abj-d.jpeg",
+      "/images/Abj-dd.jpeg",
     ],
   },
   {
