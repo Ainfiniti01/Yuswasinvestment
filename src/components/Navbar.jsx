@@ -28,7 +28,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
 
-        <a href="/" className="flex items-center">
+        <a href="/" className="flex items-center gap-3">
+          <img
+            src="/images/Yuswas logo.png"
+            alt="Yuswas Investment Ltd logo"
+            className="h-12 w-12 object-contain"
+          />
           <div className="leading-tight">
             <span className="block text-2xl font-bold tracking-tight text-white">
               YUSWAS
